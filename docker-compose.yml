@@ -1,0 +1,8 @@
+version: '2'
+networks:
+  authelianet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.240.0/24
+          gateway: 192.168.240.1

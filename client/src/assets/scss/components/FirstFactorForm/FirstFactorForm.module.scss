@@ -1,0 +1,51 @@
+@import '../../variables.scss';
+
+.notification {
+  margin-bottom: ($theme-spacing) * 2;
+}
+
+.field {
+  padding-bottom: ($theme-spacing) * 2;
+}
+
+.input {
+  width: 100%;
+}
+
+.buttons button{
+  width: 100%;
+}
+
+.controls {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.875rem;
+  color: var(--mdc-theme-primary);
+
+  a {
+    color: var(--mdc-theme-primary);
+  }
+  a:visited {
+    color: var(--mdc-theme-primary);
+  }
+}
+
+.rememberMe {
+  float: left;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  margin-left: -11px;
+}
+
+.resetPassword {
+  height: 40px;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.resetPassword a {
+  color: black;
+  font-size: 0.8em;
+}

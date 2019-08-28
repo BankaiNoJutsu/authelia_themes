@@ -1,0 +1,143 @@
+{
+  "name": "authelia",
+  "version": "3.15.0",
+  "description": "2FA Single Sign-On server for nginx using LDAP, TOTP and U2F",
+  "bin": {
+    "authelia": "./dist/server/src/index.js"
+  },
+  "engines": {
+    "node": ">=8.0.0 <10.0.0"
+  },
+  "scripts": {
+    "start": "./scripts/authelia-scripts suites start",
+    "build": "./scripts/authelia-scripts build",
+    "unittest": "./scripts/authelia-scripts unittest",
+    "test": "./scripts/authelia-scripts suites test",
+    "travis": "./scripts/authelia-scripts travis",
+    "cover": "NODE_ENV=test nyc npm t",
+    "scripts": "./scripts/authelia-scripts",
+    "hash-password": "./scripts/authelia-scripts hash-password"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clems4ever/authelia"
+  },
+  "author": "Clement Michaud <clement.michaud34@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clems4ever/authelia/issues"
+  },
+  "apidoc": {
+    "title": "Authelia API documentation"
+  },
+  "dependencies": {
+    "@duosecurity/duo_api": "^1.2.0",
+    "ajv": "^6.10.2",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^3.4.2",
+    "crypt3": "^1.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-request-id": "^1.4.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.20.0",
+    "ip-range-check": "0.0.2",
+    "ldapjs": "^1.0.2",
+    "mongodb": "^3.3.1",
+    "nedb": "^1.8.0",
+    "nodemailer": "^4.7.0",
+    "nodemailer-direct-transport": "^3.3.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "object-path": "^0.11.3",
+    "randomatic": "^3.1.1",
+    "randomstring": "^1.1.5",
+    "speakeasy": "^2.0.0",
+    "u2f": "^0.1.2",
+    "u2f-api": "^1.1.1",
+    "url-parse": "^1.4.7",
+    "winston": "^2.4.4",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/body-parser": "^1.17.1",
+    "@types/chokidar": "^1.7.5",
+    "@types/commander": "^2.12.2",
+    "@types/connect-redis": "0.0.9",
+    "@types/ejs": "^2.6.3",
+    "@types/express": "^4.17.1",
+    "@types/express-session": "1.15.8",
+    "@types/helmet": "0.0.37",
+    "@types/ldapjs": "^1.0.4",
+    "@types/mocha": "^5.2.7",
+    "@types/mockdate": "^2.0.0",
+    "@types/mongodb": "^3.3.1",
+    "@types/nedb": "^1.8.8",
+    "@types/node-fetch": "^2.5.0",
+    "@types/nodemailer": "^4.6.8",
+    "@types/nodemailer-direct-transport": "^1.0.31",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
+    "@types/object-path": "^0.9.28",
+    "@types/query-string": "^5.1.0",
+    "@types/randomstring": "^1.1.5",
+    "@types/request": "^2.48.2",
+    "@types/request-promise": "^4.1.44",
+    "@types/selenium-webdriver": "^3.0.16",
+    "@types/sinon": "^4.3.3",
+    "@types/speakeasy": "^2.0.5",
+    "@types/tmp": "0.0.33",
+    "@types/url-parse": "^1.4.3",
+    "@types/winston": "^2.4.4",
+    "@types/yamljs": "^0.2.30",
+    "apidoc": "^0.17.7",
+    "chokidar": "^2.1.8",
+    "chromedriver": "^2.46.0",
+    "commander": "^2.20.0",
+    "concurrently": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.0",
+    "mockdate": "^2.0.5",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "query-string": "^6.8.2",
+    "readable-stream": "^2.3.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "selenium-webdriver": "^4.0.0-alpha.4",
+    "should": "^13.2.3",
+    "sinon": "^5.1.1",
+    "tmp": "0.0.33",
+    "tree-kill": "^1.2.1",
+    "ts-mock-imports": "^1.2.6",
+    "ts-node": "^6.2.0",
+    "tslint": "^5.19.0",
+    "typescript": "^2.9.2",
+    "typescript-json-schema": "^0.23.0"
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "doc",
+      "src/types",
+      "dist",
+      "test",
+      "src/**/*.d.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
+  }
+}
